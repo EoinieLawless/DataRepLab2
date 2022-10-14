@@ -6,6 +6,9 @@ import './App.css';
 import {Header} from './components/header';
 import {Footer} from './components/footer';
 import {Content} from './components/content';
+import {Read} from './components/read';
+import {Create} from './components/create';
+
 
 //import for bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,6 +19,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {BrowserRouter as Router, Routes, Route} 
 from 'react-router-dom';
+
+
 
 
 
@@ -30,6 +35,7 @@ class App extends react.Component {
         <Container>
           <Navbar.Brand href="/">Navbar</Navbar.Brand>
           <Nav className="me-auto">
+
           <Nav.Link href="/">home</Nav.Link>
 
             <Nav.Link href="/read">Read</Nav.Link>
@@ -42,8 +48,8 @@ class App extends react.Component {
     {/* Setting the Routes */}
       <Routes>
         <Route path ='/' element={<Content></Content>}></Route>
-        <Route path ='/read' element={<Header></Header>}></Route>
-        <Route path ='/create' element={<Footer></Footer>}></Route>
+        <Route path ='/read' element={<Read></Read>}></Route>
+        <Route path ='/create' element={<Create></Create>}></Route>
       </Routes>
 
 
