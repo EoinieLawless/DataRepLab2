@@ -8,6 +8,8 @@ export class BooksItem extends React.Component{
         return(
             <div>
 
+   {/* implementing the books state */}
+
       {/* <h3> {this.props.books.title}</h3>
       <img src= {this.props.books.thumbnailUrl}></img>
       <h6>{this.props.books.authors[0]}</h6> */}
