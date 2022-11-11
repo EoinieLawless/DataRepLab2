@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 export class Create extends React.Component{
     constructor(){
@@ -9,6 +10,8 @@ export class Create extends React.Component{
         this.onChangeBookAuthor = this.onChangeBookAuthor.bind(this);
         this.onChangeBookUrl = this.onChangeBookUrl.bind(this);
         this.onChangeBookCover = this.onChangeBookCover.bind(this);
+
+
 
         this.state = {
             title:'',
@@ -21,7 +24,22 @@ export class Create extends React.Component{
     //to take the form
     handleSubmit(e) {
         e.preventDefault();
-        console.log(`${this.state.title}, ${this.state.cover}, ${this.state.author}, ${this.state.Url} `)
+        console.log(`Button clicked
+         ${this.state.title},
+          ${this.state.cover}, 
+          ${this.state.author}, 
+          ${this.state.Url} `)
+
+          const book ={
+          title:this.state.title,
+          cover:this.state.cover,
+          author:this.state.author,
+          Url:this.state.Url
+          }
+
+          axios.post('http://localhost:4000/api/books',book)
+          .then()
+          .catch();
 
         //to set it back to blank
         this.setState({
